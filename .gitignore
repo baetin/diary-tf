@@ -1,0 +1,25 @@
+# 1. 테라폼 바이너리 및 실행 파일
+terraform.exe
+*.exe
+
+# 2. 테라폼 라이브러리 (용량의 주범)
+.terraform/
+
+# 3. 테라폼 상태 파일 (보안상 절대 금지!)
+# 이 파일에 DB 비밀번호, AWS 키 등이 평문으로 들어있습니다.
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+
+# 4. 변수 설정 파일 (민감 정보 포함 가능성)
+*.tfvars
+*.tfvars.json
+
+# 5. 로그 및 임시 파일
+*.log
+.terraformrc
+terraform.rc
+
+# 6. 맥(macOS)이나 윈도우 시스템 파일
+.DS_Store
+Thumbs.db
