@@ -16,6 +16,8 @@ resource "aws_s3_bucket_public_access_block" "storage_access" {
 # 3. 버킷 정책 (누구나 사진을 읽을 수 있게 설정)
 resource "aws_s3_bucket_policy" "allow_public_access" {
   bucket = aws_s3_bucket.storage.id
+
+  depends_on = [aws_s3_bucket_public_access_block.storage_access]
   
   # 위에서 ACL을 막았으므로, 이 정책이 있어야 브라우저에서 사진이 보입니다.
   policy = jsonencode({
